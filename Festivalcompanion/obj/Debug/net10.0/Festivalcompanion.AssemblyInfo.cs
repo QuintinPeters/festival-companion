@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Festivalcompanion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+698bfe8af034e4a108ae70e57313a6b71a3d2c6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Festivalcompanion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Festivalcompanion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
