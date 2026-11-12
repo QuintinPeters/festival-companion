@@ -1,17 +1,20 @@
+
 services:
   web:
-    build:
-      context: ./Festivalcompanion
-      dockerfile: Dockerfile
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    working_dir: /app
+    command: dotnet run --project Festivalcompanion.csproj --urls http://+:8080
+    volumes:
+      - ./Festivalcompanion:/app
     ports:
       - "8080:8080"
     environment:
       ASPNETCORE_HTTP_PORTS: 8080
+      ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
     depends_on:
       db:
         condition: service_healthy
-    restart: unless-stopped
 
   db:
     image: postgres:latest
@@ -28,7 +31,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
 
 volumes:
   postgres_data:
