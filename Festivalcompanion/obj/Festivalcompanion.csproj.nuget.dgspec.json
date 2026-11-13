@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {}
+    "/app/Festivalcompanion.csproj": {}
   },
   "projects": {
-    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {
+    "/app/Festivalcompanion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
+        "projectUniqueName": "/app/Festivalcompanion.csproj",
         "projectName": "Festivalcompanion",
-        "projectPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
-        "packagesPath": "/Users/quintinpeters/.nuget/packages/",
-        "outputPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/obj/",
+        "projectPath": "/app/Festivalcompanion.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/quintinpeters/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.403/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.404/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
