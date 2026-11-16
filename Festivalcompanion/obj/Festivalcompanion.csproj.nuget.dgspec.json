@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {}
+    "/app/Festivalcompanion.csproj": {}
   },
   "projects": {
-    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {
+    "/app/Festivalcompanion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
+        "projectUniqueName": "/app/Festivalcompanion.csproj",
         "projectName": "Festivalcompanion",
-        "projectPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
-        "packagesPath": "/Users/quintinpeters/.nuget/packages/",
-        "outputPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/obj/",
+        "projectPath": "/app/Festivalcompanion.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/quintinpeters/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -45,6 +45,28 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -64,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.403/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.404/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
