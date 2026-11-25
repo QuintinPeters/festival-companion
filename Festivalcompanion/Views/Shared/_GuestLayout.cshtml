@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <script type="importmap"></script>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Festivalcompanion.styles.css" asp-append-version="true"/>
+</head>
+<body class="m-0 min-h-screen">
+
+<header class="w-screen">
+    <img src="/lib/festivalComBanner.png"
+         alt="Festival Companion Banner"
+         class="w-full h-auto"/>
+</header>
+
+<div class="container">
+    <main>
+        @RenderBody()
+    </main>
+</div>
+</body>
+</html>

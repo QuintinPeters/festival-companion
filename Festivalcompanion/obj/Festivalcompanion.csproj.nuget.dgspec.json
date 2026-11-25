@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/app/Festivalcompanion.csproj": {}
+    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {}
   },
   "projects": {
-    "/app/Festivalcompanion.csproj": {
+    "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/Festivalcompanion.csproj",
+        "projectUniqueName": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
         "projectName": "Festivalcompanion",
-        "projectPath": "/app/Festivalcompanion.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/app/obj/",
+        "projectPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/Festivalcompanion.csproj",
+        "packagesPath": "/Users/quintinpeters/.nuget/packages/",
+        "outputPath": "/Users/quintinpeters/RiderProjects/Festivalcompanion/Festivalcompanion/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/Users/quintinpeters/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -56,11 +56,19 @@
               "target": "Package",
               "version": "[10.0.14, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.14, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[10.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -86,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.404/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

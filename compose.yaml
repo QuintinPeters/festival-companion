@@ -3,7 +3,7 @@ services:
   web:
     image: mcr.microsoft.com/dotnet/sdk:10.0
     working_dir: /app
-    command: dotnet run --project Festivalcompanion.csproj --urls http://+:8080
+    command: dotnet watch run --project Festivalcompanion.csproj --urls http://+:8080
     volumes:
       - ./Festivalcompanion:/app
     ports:
@@ -11,7 +11,7 @@ services:
     environment:
       ASPNETCORE_HTTP_PORTS: 8080
       ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__DefaultConnection: "Host=localhost;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}"
     depends_on:
       db:
         condition: service_healthy
