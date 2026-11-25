@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0c8de9;
+  --color-secondary: #8a7cf3;
+  --color-accent: #ff61d0;
+
+  --color-background: #fbfbfe;
+  --color-foreground: #050316;
+}
+
 html {
   font-size: 14px;
 }
