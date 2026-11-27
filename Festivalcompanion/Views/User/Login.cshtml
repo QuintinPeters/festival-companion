@@ -1,0 +1,66 @@
+@model FestivalCompanion.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Inloggen";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+<div class="w-full px-4">
+
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-foreground">
+            Inloggen
+        </h1>
+        <p class="mt-2 text-lg text-foreground">
+            Welkom terug of log in op je account
+        </p>
+    </div>
+
+    <form asp-action="Login" method="post" class="space-y-4">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-red-500 text-sm">
+        </div>
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 fill-foreground"><path d="M4,20q-0.82,0-1.41-0.59T2,18V6Q2,5.18 2.59,4.59T4,4H20q0.83,0 1.41,0.59Q22,5.18 22,6V18q0,0.82-0.59,1.41T20,20H4Zm8-7L4,8V18H20V8l-8,5Zm0-2l8-5H4l8,5ZM4,8V6V8V18V8Z"/></svg>
+
+                <input asp-for="Email"
+                       type="email"
+                       placeholder="E-mailadres"
+                       class="w-full text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="Email" class="text-sm text-red-500"></span>
+        </div>
+
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-foreground"><path d="M6,22q-0.82,0-1.41-0.59T4,20V10Q4,9.17 4.59,8.59T6,8H7V6Q7,3.92 8.46,2.46T12,1t3.54,1.46T17,6V8h1q0.82,0 1.41,0.59T20,10V20q0,0.82-0.59,1.41T18,22H6Zm0-2H18V10H6V20Zm7.41-3.59Q14,15.83 14,15t-0.59-1.41T12,13t-1.41,0.59Q10,14.18 10,15t0.59,1.41T12,17t1.41-0.59ZM9,8h6V6q0-1.25-0.88-2.13T12,3T9.88,3.88T9,6V8ZM6,20V10V20Z"/></svg>
+
+                <input asp-for="Password"
+                       type="password"
+                       placeholder="Wachtwoord"
+                       class="w-full text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="Password" class="text-sm text-red-500"></span>
+        </div>
+        <button type="submit"
+                class="w-full rounded-full bg-linear-to-br from-primary via-secondary to-accent py-4 text-lg font-semibold text-white transition-opacity hover:opacity-90">
+            Inloggen →
+        </button>
+
+        <div class="flex items-center gap-4 py-2">
+            <div class="h-px flex-1 bg-foreground"></div>
+            <span class="whitespace-nowrap text-foreground">Nog geen account?</span>
+            <div class="h-px flex-1 bg-foreground"></div>
+        </div>
+
+        <a asp-controller="User"
+           asp-action="Create"
+           class="block w-full rounded-full border-2 border-secondary bg-secondary/15 py-4 text-center text-lg font-bold text-secondary transition-colors hover:bg-secondary hover:text-white">
+            Registeren
+        </a>
+
+    </form>
+</div>

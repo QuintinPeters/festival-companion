@@ -1,46 +1,78 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using System.Security.Claims
+@{
+    var current = ViewContext.RouteData.Values["controller"]?.ToString() ?? "Home";
+
+    string Active(string controller) =>
+        current.Equals(controller, StringComparison.OrdinalIgnoreCase)
+            ? "!text-primary"
+            : "!text-foreground";
+}
+
+<!DOCTYPE html>
+<html lang="nl">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Festivalcompanion</title>
+    <title>@ViewData["Title"]</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/Festivalcompanion.styles.css" asp-append-version="true"/>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Festivalcompanion</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<header class="p-2">
+    <img src="/lib/logo.png"
+         alt="Festival Companion Banner"
+         class="w-56 h-auto"/>
 </header>
+
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2026 - Festivalcompanion - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
+<footer class="footer">
+    <nav class="fixed inset-x-0 bottom-0 z-50 bg-background
+            shadow-[0_-2px_10px_rgba(0,0,0,0.12)]
+            pb-[env(safe-area-inset-bottom)]">
+        <ul class="flex items-center justify-around px-4 pt-3">
+
+            <li>
+                <a asp-controller="Home" asp-action="Index"
+                   class="flex flex-col items-center !text-lg font-bold !no-underline @Active("Home")">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="36px" width="36px" fill="currentColor"><path d="M4,21V9l8-6l8,6V21H14V14H10v7H4Z"/></svg>
+                    <span>Home</span>
+                </a>    
+            </li>
+
+            <li>
+                <a asp-controller="Wallet" asp-action="Index"
+                   class="flex flex-col items-center !text-lg font-bold !no-underline @Active("Wallet")">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="36px" width="36px" fill="currentColor"><path d="M5,19V5Q5,5 5,6.11Q5,7.22 5,9v6q0,1.77 0,2.89T5,19Zm0,2q-0.83,0-1.41-0.59T3,19V5Q3,4.17 3.59,3.59T5,3H19q0.83,0 1.41,0.59T21,5V7.5H19V5H5V19H19V16.5h2V19q0,0.82-0.59,1.41T19,21H5Zm8-4q-0.82,0-1.41-0.59T11,15V9q0-0.83 0.59-1.41T13,7h7q0.83,0 1.41,0.59T22,9v6q0,0.82-0.59,1.41T20,17H13Zm7-2V9H13v6h7Zm-2.94-1.94Q17.5,12.63 17.5,12t-0.44-1.06T16,10.5t-1.06,0.44T14.5,12t0.44,1.06T16,13.5t1.06-0.44Z"/></svg>
+                    <span>Balans</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Quests" asp-action="Index"
+                   class="flex flex-col items-center !text-lg font-bold !no-underline @Active("Quests")">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="36px" width="36px" fill="currentColor"><path d="M9.68,13.7l0.88-2.85L8.25,9H11.1L12,6.2L12.9,9h2.85l-2.32,1.85L14.3,13.7L12,11.93L9.68,13.7ZM6,23V15.28q-0.95-1.05-1.47-2.4Q4,11.52 4,10Q4,6.65 6.33,4.32T12,2t5.68,2.32T20,10q0,1.52-0.52,2.88T18,15.28V23l-6-2L6,23Zm10.25-8.75Q18,12.5 18,10T16.25,5.75T12,4T7.75,5.75T6,10t1.75,4.25T12,16t4.25-1.75ZM8,20.02L12,19l4,1.02v-3.1q-0.88,0.5-1.89,0.79T12,18T9.89,17.71Q8.88,17.43 8,16.93v3.1Zm4-1.55Z"/></svg>
+                    <span>Quests</span>
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="User" asp-action="Profile" asp-route-id="@User.FindFirstValue(ClaimTypes.NameIdentifier)"
+                   class="flex flex-col items-center !text-lg font-bold !no-underline @Active("User")">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="36px" width="36px" fill="currentColor"><path d="M9.18,10.83Q8,9.65 8,8T9.18,5.18T12,4t2.83,1.18T16,8t-1.17,2.82T12,12T9.18,10.83ZM4,20V17.2q0-0.85 0.44-1.56q0.44-0.71 1.16-1.09q1.55-0.78 3.15-1.16T12,13t3.25,0.39t3.15,1.16q0.72,0.38 1.16,1.09T20,17.2V20H4Zm2-2H18V17.2q0-0.27-0.14-0.5q-0.14-0.22-0.36-0.35q-1.35-0.68-2.72-1.01T12,15T9.23,15.34T6.5,16.35Q6.28,16.48 6.14,16.7Q6,16.93 6,17.2V18Zm7.41-8.59Q14,8.82 14,8T13.41,6.59T12,6T10.59,6.59Q10,7.18 10,8t0.59,1.41T12,10t1.41-0.59ZM12,8Zm0,10Z"/></svg>
+                    <span>Profiel</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Festivalcompanion.styles.css" asp-append-version="true"/>
+</head>
+<body class="h-screen">
+
+<header class="w-full">
+    <img src="/lib/festivalComBanner.png"
+         alt="Festival Companion Banner"
+         class="block w-full h-auto"/>
+</header>
+
+<div class="h-full">
+    <main class="w-full flex items-center justify-center flex-col px-6">
+        @RenderBody()
+    </main>
+</div>
+
+</body>
+</html>

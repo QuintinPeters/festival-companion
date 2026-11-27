@@ -1,0 +1,110 @@
+
+@model Festivalcompanion.Models.User
+
+@{
+    ViewData["Title"] = "Registeren";
+    Layout = "~/Views/Shared/_GuestLayout.cshtml";
+}
+
+<div class="w-full px-4">
+
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-foreground">
+            Registreren
+        </h1>
+        <p class="mt-2 text-lg text-foreground">
+            Maak een account aan en beleef je festivals
+        </p>
+    </div>
+
+    <form asp-action="Create" method="post" class="space-y-4">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-red-500 text-sm">
+        </div>
+
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 fill-foreground"><path d="M9.18,10.83Q8,9.65 8,8T9.18,5.18T12,4t2.83,1.18T16,8t-1.17,2.82T12,12T9.18,10.83ZM4,18V17.2q0-0.85 0.44-1.56q0.44-0.71 1.16-1.09q1.55-0.78 3.15-1.16T12,13t3.25,0.39t3.15,1.16q0.72,0.38 1.16,1.09T20,17.2V18q0,0.82-0.59,1.41T18,20H6q-0.82,0-1.41-0.59T4,18Zm2,0H18V17.2q0-0.27-0.14-0.5q-0.14-0.22-0.36-0.35q-1.35-0.68-2.72-1.01T12,15T9.23,15.34T6.5,16.35Q6.28,16.48 6.14,16.7Q6,16.93 6,17.2V18Zm7.41-8.59Q14,8.82 14,8T13.41,6.59T12,6T10.59,6.59Q10,7.18 10,8t0.59,1.41T12,10t1.41-0.59ZM12,8Zm0,10Z"/></svg>
+
+                <input asp-for="Name"
+                       placeholder="Voor- en achternaam"
+                       class="w-full text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="Name" class="text-sm text-red-500"></span>
+        </div>
+
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 fill-foreground"><path d="M4,20q-0.82,0-1.41-0.59T2,18V6Q2,5.18 2.59,4.59T4,4H20q0.83,0 1.41,0.59Q22,5.18 22,6V18q0,0.82-0.59,1.41T20,20H4Zm8-7L4,8V18H20V8l-8,5Zm0-2l8-5H4l8,5ZM4,8V6V8V18V8Z"/></svg>
+
+                <input asp-for="Email"
+                       type="email"
+                       placeholder="E-mailadres"
+                       class="w-full text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="Email" class="text-sm text-red-500"></span>
+        </div>
+
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-foreground"><path d="M6,22q-0.82,0-1.41-0.59T4,20V10Q4,9.17 4.59,8.59T6,8H7V6Q7,3.92 8.46,2.46T12,1t3.54,1.46T17,6V8h1q0.82,0 1.41,0.59T20,10V20q0,0.82-0.59,1.41T18,22H6Zm0-2H18V10H6V20Zm7.41-3.59Q14,15.83 14,15t-0.59-1.41T12,13t-1.41,0.59Q10,14.18 10,15t0.59,1.41T12,17t1.41-0.59ZM9,8h6V6q0-1.25-0.88-2.13T12,3T9.88,3.88T9,6V8ZM6,20V10V20Z"/></svg>
+
+                <input asp-for="Password"
+                       type="password"
+                       placeholder="Wachtwoord"
+                       class="w-full text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="Password" class="text-sm text-red-500"></span>
+        </div>
+
+        <div>
+            <div class="flex items-center gap-2 rounded-2xl border border-foreground px-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 fill-foreground"><path d="M6,22q-0.82,0-1.41-0.59T4,20V10Q4,9.17 4.59,8.59T6,8H7V6Q7,3.92 8.46,2.46T12,1t3.54,1.46T17,6V8h1q0.82,0 1.41,0.59T20,10V20q0,0.82-0.59,1.41T18,22H6Zm0-2H18V10H6V20Zm7.41-3.59Q14,15.83 14,15t-0.59-1.41T12,13t-1.41,0.59Q10,14.18 10,15t0.59,1.41T12,17t1.41-0.59ZM9,8h6V6q0-1.25-0.88-2.13T12,3T9.88,3.88T9,6V8ZM6,20V10V20Z"/></svg>
+
+
+                <input type="password"
+                       name="ConfirmPassword"
+                       id="ConfirmPassword"
+                       placeholder="Wachtwoord herhalen"
+                       class="w-full bg-transparent text-foreground placeholder:text-foreground/70 px-4 py-4"/>
+            </div>
+            <span asp-validation-for="ConfirmPassword"
+                  class="text-sm text-red-500"></span>
+        </div>
+
+        <div class="flex items-start gap-3 pt-2 text-sm">
+            <input type="checkbox"
+                   id="terms"
+                   name="terms"
+                   required
+                   class="mt-1 h-5 w-5 shrink-0 accent-primary"/>
+
+            <label for="terms" class="text-foreground">
+                Ik ga akkoord met de
+                <a href="#" class="text-secondary underline">algemene voorwaarden</a>
+                en
+                <a href="#" class="text-secondary underline">privacyverklaring</a>
+            </label>
+        </div>
+
+        <button type="submit"
+                class="w-full rounded-full bg-gradient-to-br from-primary via-secondary to-accent py-4 text-lg font-semibold text-white transition-opacity hover:opacity-90">
+            Registreren →
+        </button>
+
+        <div class="flex items-center gap-4 py-2">
+            <div class="h-px flex-1 bg-foreground"></div>
+            <span class="whitespace-nowrap text-foreground">Al een account?</span>
+            <div class="h-px flex-1 bg-foreground"></div>
+        </div>
+
+        <a asp-controller="User"
+           asp-action="Login"
+           class="block w-full rounded-full border-2 border-secondary bg-secondary/15 py-4 text-center text-lg font-bold text-secondary transition-colors hover:bg-secondary hover:text-white">
+            Inloggen
+        </a>
+
+    </form>
+</div>
